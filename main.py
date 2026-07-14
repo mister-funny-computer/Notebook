@@ -1,1 +1,12 @@
+import tkinter as tk
 
+window = tk.Tk()
+window.title("Блокнот")
+window.geometry("400x400")
+
+content_text = tk.Text(window, wrap = "word")
+content_text.place(x = 0, y = 0, relwidth = 1, relheight = 1)
+
+
+
+window.mainloop()
