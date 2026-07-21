@@ -15,10 +15,14 @@ main_menu.add_cascade(label = "Файл", menu = file_menu)
 
 new_file_icon = tk.PhotoImage(file = "new_file.gif")
 
+open_file_gif = tk.PhotoImage(file = "open_file.gif")
+
+save_file_gif = tk.PhotoImage(file = "save_file.gif")
 
 
 file_menu.add_command(label = "Новый", image = new_file_icon, compound = "left",)
-file_menu.add_command(label = "Открыть")
-file_menu.add_command(label = "Сохранить")
+file_menu.add_command(label = "Открыть", image = open_file_gif, compound = "left",)
+file_menu.add_command(label = "Сохранить", image = save_file_gif, compound = "left")
 
 window.mainloop()
+
