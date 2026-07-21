@@ -23,6 +23,8 @@ save_file_icon = tk.PhotoImage(file = "save_file.gif")
 file_menu.add_command(label = "Новый", image = new_file_icon, compound = "left",)
 file_menu.add_command(label = "Открыть", image = open_file_icon, compound = "left",)
 file_menu.add_command(label = "Сохранить", image = save_file_icon, compound = "left")
+file_menu.add_command(label = "Сохранить как", image = save_file_icon, compound = "left")
+
 
 window.mainloop()
 
