@@ -12,6 +12,14 @@ def open_file():
         content_text.delete(1.0, "end")
         content_text.insert(1.0, text)
 
+def save_as_file():
+    file_name = tfd.asksaveasfilename()
+    text = content_text.get(1.0, "end")
+    with open(file_name, "w", encoding = "utf-8") as file:
+         file.write(text)
+
+def save_file():
+    save_as_file()
 
 
 content_text = tk.Text(window, wrap = "word")
@@ -32,8 +40,8 @@ save_file_icon = tk.PhotoImage(file = "save_file.gif")
 
 file_menu.add_command(label = "Новый", image = new_file_icon, compound = "left",)
 file_menu.add_command(label = "Открыть", image = open_file_icon, compound = "left", command = open_file)
-file_menu.add_command(label = "Сохранить", image = save_file_icon, compound = "left")
-file_menu.add_command(label = "Сохранить как", image = save_file_icon, compound = "left")
+file_menu.add_command(label = "Сохранить", image = save_file_icon, compound = "left", command = save_file)
+file_menu.add_command(label = "Сохранить как", image = save_file_icon, compound = "left", command = save_as_file)
 
 
 window.mainloop()
