@@ -21,6 +21,9 @@ def save_as_file():
 def save_file():
     save_as_file()
 
+def new_file():
+    content_text.delete(1.0, "end")
+
 
 content_text = tk.Text(window, wrap = "word")
 content_text.place(x = 0, y = 0, relwidth = 1, relheight = 1)
@@ -38,7 +41,7 @@ open_file_icon = tk.PhotoImage(file = "open_file.gif")
 save_file_icon = tk.PhotoImage(file = "save_file.gif")
 
 
-file_menu.add_command(label = "Новый", image = new_file_icon, compound = "left",)
+file_menu.add_command(label = "Новый", image = new_file_icon, compound = "left", command = new_file)
 file_menu.add_command(label = "Открыть", image = open_file_icon, compound = "left", command = open_file)
 file_menu.add_command(label = "Сохранить", image = save_file_icon, compound = "left", command = save_file)
 file_menu.add_command(label = "Сохранить как", image = save_file_icon, compound = "left", command = save_as_file)
